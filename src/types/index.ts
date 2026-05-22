@@ -7,28 +7,50 @@ export interface Theme {
   color: string;
 }
 
+// export interface Language {
+//   id: string;
+//   label: string;
+//   logoPath: string;
+//   monacoLanguage: string;
+//   defaultCode: string;
+//   pistonRuntime: LanguageRuntime;
+// }
+
+// export interface LanguageRuntime {
+//   language: string;
+//   version: string;
+// }
+
+// export interface ExecuteCodeResponse {
+//   compile?: {
+//     output: string;
+//   };
+//   run?: {
+//     output: string;
+//     stderr: string;
+//   };
+// }
+
 export interface Language {
   id: string;
   label: string;
   logoPath: string;
   monacoLanguage: string;
   defaultCode: string;
-  pistonRuntime: LanguageRuntime;
+  jdoodleRuntime: LanguageRuntime;
 }
 
 export interface LanguageRuntime {
   language: string;
-  version: string;
+  versionIndex: string;
 }
 
 export interface ExecuteCodeResponse {
-  compile?: {
-    output: string;
-  };
-  run?: {
-    output: string;
-    stderr: string;
-  };
+  output: string;
+  error: string | null;
+  statusCode?: number;
+  memory?: string;
+  cpuTime?: string;
 }
 
 export interface ExecutionResult {
